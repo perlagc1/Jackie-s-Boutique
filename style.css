@@ -20,7 +20,10 @@ body {
     line-height: 1.7;
 }
 
-/* ENCABEZADO */
+
+/* ================================
+   ENCABEZADO
+   ================================ */
 
 header {
     background: linear-gradient(135deg, #6d4264, #a4779d);
@@ -40,10 +43,13 @@ header p {
     font-style: italic;
 }
 
-/* MENÚ */
+
+/* ================================
+   MENÚ
+   ================================ */
 
 nav {
-    background-color: #fff;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     gap: 35px;
@@ -59,20 +65,27 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #b47b38;
 }
 
-/* CONTENIDO PRINCIPAL */
+
+/* ================================
+   CONTENIDO PRINCIPAL
+   ================================ */
 
 main {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 }
 
-/* SECCIONES */
+
+/* ================================
+   SECCIONES
+   ================================ */
 
 section {
     padding: 80px 30px;
@@ -91,7 +104,10 @@ section p {
     font-size: 1.1rem;
 }
 
-/* INICIO */
+
+/* ================================
+   INICIO
+   ================================ */
 
 #inicio {
     min-height: 500px;
@@ -99,6 +115,7 @@ section p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     background: linear-gradient(
         rgba(248, 243, 247, 0.94),
         rgba(248, 243, 247, 0.94)
@@ -108,8 +125,6 @@ section p {
 #inicio h2 {
     font-size: 2.8rem;
 }
-
-/* BOTÓN */
 
 #inicio a {
     display: inline-block;
@@ -129,53 +144,140 @@ section p {
     transform: translateY(-2px);
 }
 
-/* COLECCIÓN */
+
+/* ================================
+   COLECCIÓN
+   ================================ */
 
 #coleccion {
-    background-color: white;
+    background-color: #ffffff;
 }
+
+#coleccion h2 {
+    margin-bottom: 10px;
+}
+
+.coleccion-intro {
+    color: #66505f;
+    margin-bottom: 45px;
+}
+
+
+/* CONTENEDOR DE PRODUCTOS */
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+/* TARJETAS */
 
 article {
-    max-width: 600px;
-    margin: 35px auto 0;
-    padding: 35px;
+    margin: 0;
+    padding: 22px;
     background-color: #f8f3f7;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(61, 41, 56, 0.10);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-article h3 {
-    color: #6d4264;
-    font-size: 1.7rem;
-    margin-bottom: 15px;
+article:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(61, 41, 56, 0.18);
 }
+
+
+/* FOTOS DE PRODUCTOS */
 
 article img {
     width: 100%;
-    max-width: 350px;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+
     border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 22px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* NOMBRE DEL PRODUCTO */
+
+article h3 {
+    color: #6d4264;
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+
+/* DESCRIPCIÓN */
+
+article p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+
+/* PRECIO */
+
+article p:last-child {
+    margin-top: auto;
+    padding-top: 10px;
 }
 
 article strong {
     color: #b47b38;
 }
 
-/* NUESTRA HISTORIA */
+
+/* ================================
+   NUESTRA HISTORIA
+   ================================ */
 
 #nosotros {
     background-color: #eee3eb;
 }
 
-/* CONTACTO */
+
+/* ================================
+   CONTACTO
+   ================================ */
 
 #contacto {
-    background-color: white;
+    background-color: #ffffff;
 }
 
-/* PIE DE PÁGINA */
+.contacto-info a {
+    color: #6d4264;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contacto-info a:hover {
+    color: #b47b38;
+    text-decoration: underline;
+}
+
+.contacto-final {
+    margin-top: 25px;
+    font-style: italic;
+}
+
+
+/* ================================
+   PIE DE PÁGINA
+   ================================ */
 
 footer {
     background-color: #3d2938;
@@ -188,18 +290,26 @@ footer p {
     margin: 5px;
 }
 
-/* CELULARES */
 
-.contacto-info a {
-    color: #6d4264;
-    text-decoration: none;
-    font-weight: bold;
+/* ================================
+   TABLETAS
+   ================================ */
+
+@media (max-width: 950px) {
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    article img {
+        height: 300px;
+    }
 }
 
-.contacto-info a:hover {
-    color: #b47b38;
-    text-decoration: underline;
-}
+
+/* ================================
+   CELULARES
+   ================================ */
 
 @media (max-width: 700px) {
 
@@ -216,15 +326,18 @@ footer p {
     }
 
     nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        padding: 15px;
-    }
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 20px;
+    padding: 12px 10px;
+    position: static;
+}
 
-    nav a {
-        font-size: 1rem;
-    }
+nav a {
+    font-size: 0.9rem;
+}
 
     section {
         padding: 55px 20px;
@@ -246,12 +359,19 @@ footer p {
         font-size: 1rem;
     }
 
+    .productos {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
     article {
-        padding: 25px 18px;
+        padding: 20px;
     }
 
     article img {
-        max-width: 100%;
+        height: auto;
+        max-height: 450px;
+        object-fit: contain;
     }
 
     section p {

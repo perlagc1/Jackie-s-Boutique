@@ -388,3 +388,128 @@ nav a {
         font-size: 0.9rem;
     }
 }
+
+/* ================================
+   CARRITO DE COMPRAS
+   ================================ */
+
+#carrito {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(61, 41, 56, 0.15);
+}
+
+#carrito h2 {
+    color: #6d4264;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+#lista-carrito p {
+    padding: 12px 0;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee3eb;
+}
+
+#lista-carrito button {
+    margin-left: 15px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    background-color: #6d4264;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+#lista-carrito button:hover {
+    background-color: #b47b38;
+}
+
+/* Toque elegante para el carrito */
+
+#carrito {
+    border: 1px solid #eee3eb;
+    position: relative;
+}
+
+#carrito::before {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #b47b38;
+    margin: 0 auto 25px;
+    border-radius: 10px;
+}
+
+#carrito h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+#lista-carrito p {
+    font-size: 1.05rem;
+}
+
+#carrito > p:last-child {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid #eee3eb;
+    font-size: 1.3rem;
+}
+
+/* Botones Agregar al carrito */
+
+article button {
+    margin-top: 12px;
+    padding: 10px 20px;
+    border: 1px solid #6d4264;
+    border-radius: 25px;
+    background-color: #6d4264;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+article button:hover {
+    background-color: #b47b38;
+    border-color: #b47b38;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(61, 41, 56, 0.18);
+}
+
+/* ================================
+   NOTIFICACIÓN DEL CARRITO
+   ================================ */
+
+#notificacion-carrito {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    background-color: #6d4264;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    box-shadow: 0 8px 22px rgba(61, 41, 56, 0.25);
+    font-weight: bold;
+    z-index: 1000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+}
+
+#notificacion-carrito.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}

@@ -9,7 +9,7 @@ function agregarAlCarrito(nombre, precio) {
     );
 
     if (productoExiste) {
-        alert(nombre + " ya está en tu carrito.");
+        mostrarNotificacion("⚠ " + nombre + " ya está en tu carrito.");
         return;
     }
 
@@ -19,10 +19,11 @@ function agregarAlCarrito(nombre, precio) {
     });
     actualizarCarrito();
 
+    mostrarNotificacion("✓ " + nombre + " fue agregada a tu carrito.");
+
     console.log("Producto agregado:", nombre);
     console.log("Carrito:", carrito);
 
-    alert(nombre + " fue agregada a tu carrito.");
 }
 function actualizarCarrito() {
     const contadorCarrito = document.getElementById("contador-carrito");
@@ -76,4 +77,15 @@ function mostrarCarrito() {
     } else {
         carritoSeccion.style.display = "none";
     }
+}
+
+function mostrarNotificacion(mensaje) {
+    const notificacion = document.getElementById("notificacion-carrito");
+
+    notificacion.textContent = mensaje;
+    notificacion.classList.add("mostrar");
+
+    setTimeout(function() {
+        notificacion.classList.remove("mostrar");
+    }, 2500);
 }

@@ -20,7 +20,24 @@
         <a href="#coleccion">Colección</a>
         <a href="#nosotros">Nuestra Historia</a>
         <a href="#contacto">Contáctanos</a>
-    </nav>
+        <a href="#" onclick="mostrarCarrito(); return false;">
+    🛒 Carrito (<span id="contador-carrito">0</span>)
+</a>
+
+</nav>
+
+    <!-- CARRITO DE COMPRAS -->
+<section id="carrito" style="display: none;">
+    <h2>🛒 Tu Carrito</h2>
+
+    <div id="lista-carrito">
+        <p>Tu carrito está vacío.</p>
+    </div>
+
+    <p>
+        <strong>Total: $<span id="total-carrito">0</span></strong>
+    </p>
+</section>
 
     <main>
 
@@ -64,6 +81,9 @@
                     </p>
 
                     <p><strong>$50</strong></p>
+                    <button onclick="agregarAlCarrito('Jaqui', 50)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -80,6 +100,9 @@
                     </p>
 
                     <p><strong>$50</strong></p>
+                    <button onclick="agregarAlCarrito('Rebeca', 50)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -95,6 +118,9 @@
                     </p>
 
                     <p><strong>$40</strong></p>
+                    <button onclick="agregarAlCarrito('Kelli Blanca', 40)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -110,6 +136,9 @@
                     </p>
 
                     <p><strong>$50</strong></p>
+                    <button onclick="agregarAlCarrito('Rocio', 50)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -125,6 +154,9 @@
                     </p>
 
                     <p><strong>$40</strong></p>
+                    <button onclick="agregarAlCarrito('Kelli Rosa', 40)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -141,6 +173,9 @@
                     </p>
 
                     <p><strong>$60</strong></p>
+                    <button onclick="agregarAlCarrito('Perla', 60)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -157,6 +192,9 @@
                     </p>
 
                     <p><strong>$40</strong></p>
+                    <button onclick="agregarAlCarrito('Juli', 40)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -173,6 +211,9 @@
                     </p>
 
                     <p><strong>$40</strong></p>
+                    <button onclick="agregarAlCarrito('Dafne', 40)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
 
@@ -189,6 +230,9 @@
                     </p>
 
                     <p><strong>$40</strong></p>
+                    <button onclick="agregarAlCarrito('Michel', 40)">
+    Agregar al carrito 🛒
+</button>
                 </article>
 
             </div>
@@ -270,7 +314,9 @@
     <footer>
         <p>&copy; 2026 Jackie's Boutique. Todos los derechos reservados.</p>
         <p>Tu estilo, tu esencia.</p>
-    </footer>
+        </footer>
+
+    <script src="script.js"></script>
 
 </body>
 

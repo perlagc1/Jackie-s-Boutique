@@ -618,3 +618,20 @@ article button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(61, 41, 56, 0.22);
 }
+
+/* ================================
+   AVISO DEL PEDIDO
+   ================================ */
+
+.aviso-pedido {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px 18px;
+    background-color: #f8f3f7;
+    color: #6d4264;
+    border-left: 4px solid #c98a32;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+}

@@ -157,7 +157,7 @@ botonConfirmar.style.display = "inline-block";
     mostrarNotificacion("✓ Seleccionaste " + metodo + " como método de pago.");
 }
 
-function confirmarPedido() {
+function confirmarPedido(tipo) {
 
     if (carrito.length === 0) {
         mostrarNotificacion("⚠ Tu carrito está vacío.");
@@ -183,5 +183,18 @@ const resumenPedido =
     "\nMétodo de pago: " + metodoPagoSeleccionado;
 
     const mensaje = encodeURIComponent(resumenPedido);
-window.location.href = "sms:13087460339?body=" + mensaje;
+
+if (tipo === "sms") {
+    window.location.href = "sms:13087460339?body=" + mensaje;
+}
+
+if (tipo === "email") {
+    const asunto = encodeURIComponent("Pedido de Jackie's Boutique");
+
+    window.location.href =
+        "mailto:angel_perla@hotmail.com?subject=" +
+        asunto +
+        "&body=" +
+        mensaje;
+}
 }

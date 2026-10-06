@@ -59,12 +59,17 @@
 
     <div id="instrucciones-pago" style="display: none;"></div>
 
-<button id="confirmar-pedido"
-        type="button"
-        style="display: none;"
-        onclick="confirmarPedido()">
-    Confirmar pedido
-</button>
+<div id="confirmar-pedido" style="display: none;">
+
+    <button type="button" onclick="confirmarPedido('sms')">
+        📱 Enviar por mensaje
+    </button>
+
+    <button type="button" onclick="confirmarPedido('email')">
+        ✉️ Enviar por correo
+    </button>
+
+</div>
 
 </div>
 

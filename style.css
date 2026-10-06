@@ -587,22 +587,33 @@ article button:hover {
    BOTÓN CONFIRMAR PEDIDO
    ================================ */
 
+/* ================================
+   OPCIONES PARA ENVIAR PEDIDO
+   ================================ */
+
 #confirmar-pedido {
     margin-top: 25px;
-    padding: 14px 32px;
+    display: none;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#confirmar-pedido button {
+    padding: 14px 25px;
     background-color: #c98a32;
     color: white;
     border: none;
     border-radius: 30px;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(61, 41, 56, 0.15);
     transition: 0.3s ease;
 }
 
-#confirmar-pedido:hover {
+#confirmar-pedido button:hover {
     background-color: #6d4264;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(61, 41, 56, 0.22);

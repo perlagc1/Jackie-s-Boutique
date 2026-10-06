@@ -1,6 +1,7 @@
 // Carrito de compras de Jackie's Boutique
 
 let carrito = [];
+let metodoPagoSeleccionado = "";
 
 function agregarAlCarrito(nombre, precio) {
 
@@ -88,4 +89,99 @@ function mostrarNotificacion(mensaje) {
     setTimeout(function() {
         notificacion.classList.remove("mostrar");
     }, 2500);
+}
+
+function finalizarCompra() {
+
+    if (carrito.length === 0) {
+        mostrarNotificacion("⚠ Tu carrito está vacío.");
+        return;
+    }
+
+    const checkout = document.getElementById("checkout");
+    const checkoutTotal = document.getElementById("checkout-total");
+
+    let total = 0;
+
+    carrito.forEach(producto => {
+        total += producto.precio;
+    });
+
+    checkoutTotal.textContent = total;
+    checkout.style.display = "block";
+
+    mostrarNotificacion("✓ Tu pedido está listo para continuar.");
+}
+
+function mostrarPago(metodo) {
+metodoPagoSeleccionado = metodo;
+
+    const instrucciones = document.getElementById("instrucciones-pago");
+
+    if (metodo === "Zelle") {
+        instrucciones.innerHTML = `
+            <h4>Pago con Zelle</h4>
+            <p>Envía tu pago por Zelle al siguiente número:</p>
+            <p><strong>308-746-0339</strong></p>
+            <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
+        `;
+
+        instrucciones.style.display = "block";
+    }
+
+    if (metodo === "Venmo") {
+    instrucciones.innerHTML = `
+        <h4>Pago con Venmo</h4>
+        <p>Envía tu pago por Venmo al siguiente usuario:</p>
+        <p><strong>@Perla-GarciaCavazos</strong></p>
+        <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
+    `;
+
+    instrucciones.style.display = "block";
+}
+
+if (metodo === "Cash App") {
+    instrucciones.innerHTML = `
+        <h4>Pago con Cash App</h4>
+        <p>Envía tu pago por Cash App al siguiente $Cashtag:</p>
+        <p><strong>$perlagc1</strong></p>
+        <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
+    `;
+
+    instrucciones.style.display = "block";
+}
+
+const botonConfirmar = document.getElementById("confirmar-pedido");
+botonConfirmar.style.display = "inline-block";
+
+    mostrarNotificacion("✓ Seleccionaste " + metodo + " como método de pago.");
+}
+
+function confirmarPedido() {
+
+    if (carrito.length === 0) {
+        mostrarNotificacion("⚠ Tu carrito está vacío.");
+        return;
+    }
+
+    let total = 0;
+
+carrito.forEach(producto => {
+    total += producto.precio;
+});
+
+let resumenProductos = "";
+
+carrito.forEach(producto => {
+    resumenProductos += producto.nombre + " — $" + producto.precio + "\n";
+});
+
+const resumenPedido =
+    "Pedido de Jackie's Boutique\n\n" +
+    resumenProductos +
+    "\nTotal: $" + total +
+    "\nMétodo de pago: " + metodoPagoSeleccionado;
+
+    const mensaje = encodeURIComponent(resumenPedido);
+window.location.href = "sms:13087460339?body=" + mensaje;
 }

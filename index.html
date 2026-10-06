@@ -37,6 +37,37 @@
     <p>
         <strong>Total: $<span id="total-carrito">0</span></strong>
     </p>
+
+    <button id="finalizar-compra" onclick="finalizarCompra()">
+    Finalizar compra
+</button>
+<div id="checkout" style="display: none;">
+    <h3>Finaliza tu compra</h3>
+
+    <p>
+        Total de tu pedido:
+        <strong>$<span id="checkout-total">0</span></strong>
+    </p>
+
+    <p>Selecciona tu método de pago:</p>
+
+    <div class="metodos-pago">
+        <button type="button" onclick="mostrarPago('Cash App')">Cash App</button>
+        <button type="button" onclick="mostrarPago('Venmo')">Venmo</button>
+        <button type="button" onclick="mostrarPago('Zelle')">Zelle</button>
+    </div>
+
+    <div id="instrucciones-pago" style="display: none;"></div>
+
+<button id="confirmar-pedido"
+        type="button"
+        style="display: none;"
+        onclick="confirmarPedido()">
+    Confirmar pedido
+</button>
+
+</div>
+
 </section>
 
     <main>

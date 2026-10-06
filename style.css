@@ -513,3 +513,97 @@ article button:hover {
     visibility: visible;
     transform: translate(-50%, 0);
 }
+
+/* ================================
+   BOTÓN FINALIZAR COMPRA
+   ================================ */
+
+#finalizar-compra {
+    background-color: #c98a32;
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(61, 41, 56, 0.15);
+    transition: 0.3s ease;
+}
+
+#finalizar-compra:hover {
+    background-color: #6d4264;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(61, 41, 56, 0.22);
+}
+
+/* ================================
+   MÉTODOS DE PAGO
+   ================================ */
+
+#checkout {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #eadde6;
+}
+
+#checkout h3 {
+    color: #6d4264;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.metodos-pago {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.metodos-pago button {
+    background-color: #6d4264;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 120px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(61, 41, 56, 0.15);
+}
+
+.metodos-pago button:hover {
+    background-color: #c98a32;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(61, 41, 56, 0.22);
+}
+
+/* ================================
+   BOTÓN CONFIRMAR PEDIDO
+   ================================ */
+
+#confirmar-pedido {
+    margin-top: 25px;
+    padding: 14px 32px;
+    background-color: #c98a32;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(61, 41, 56, 0.15);
+    transition: 0.3s ease;
+}
+
+#confirmar-pedido:hover {
+    background-color: #6d4264;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(61, 41, 56, 0.22);
+}

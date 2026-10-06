@@ -26,7 +26,7 @@ body {
    ================================ */
 
 header {
-    background: linear-gradient(135deg, #6d4264, #a4779d);
+    background: #ffffff;
     color: white;
     text-align: center;
     padding: 55px 20px;
@@ -41,6 +41,15 @@ header h1 {
 header p {
     font-size: 1.3rem;
     font-style: italic;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    max-width: 275px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
 }
 
 

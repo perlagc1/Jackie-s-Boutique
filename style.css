@@ -644,3 +644,14 @@ article button:hover {
     line-height: 1.5;
     text-align: center;
 }
+
+/* Tamaño del logo en celulares */
+@media (max-width: 600px) {
+    .logo {
+        max-width: 230px;
+    }
+
+    header {
+        padding: 30px 20px;
+    }
+}

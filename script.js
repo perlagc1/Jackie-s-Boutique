@@ -2,8 +2,14 @@
 
 let carrito = [];
 let metodoPagoSeleccionado = "";
+const productosAgotados = ["Arely", "Sofi"];
 
 function agregarAlCarrito(nombre, precio) {
+
+    if (productosAgotados.includes(nombre)) {
+        mostrarNotificacion("⚠ " + nombre + " está agotado.");
+        return;
+    }
 
     const productoExiste = carrito.find(
         producto => producto.nombre === nombre
@@ -163,6 +169,14 @@ function confirmarPedido(tipo) {
         mostrarNotificacion("⚠ Tu carrito está vacío.");
         return;
     }
+    const productoAgotado = carrito.find(producto =>
+    productosAgotados.includes(producto.nombre)
+);
+
+if (productoAgotado) {
+    mostrarNotificacion("⚠ " + productoAgotado.nombre + " está agotado. Elimínalo del carrito para continuar.");
+    return;
+}
 
     let total = 0;
 

@@ -54,7 +54,7 @@ function actualizarCarrito() {
     item.textContent = producto.nombre + " — $" + producto.precio + " ";
 
     const botonQuitar = document.createElement("button");
-    botonQuitar.textContent = "Quitar";
+    botonQuitar.textContent = idiomaActual === "en" ? "Remove" : "Quitar";
 
     botonQuitar.onclick = function() {
         quitarDelCarrito(producto.nombre);
@@ -124,35 +124,63 @@ metodoPagoSeleccionado = metodo;
 
     const instrucciones = document.getElementById("instrucciones-pago");
 
-    if (metodo === "Zelle") {
+    
+if (metodo === "Zelle") {
+    if (idiomaActual === "en") {
+        instrucciones.innerHTML = `
+            <h4>Pay with Zelle</h4>
+            <p>Send your payment through Zelle to the following phone number:</p>
+            <p><strong>308-746-0339</strong></p>
+            <p>After making your payment, contact us to confirm your order.</p>
+        `;
+    } else {
         instrucciones.innerHTML = `
             <h4>Pago con Zelle</h4>
             <p>Envía tu pago por Zelle al siguiente número:</p>
             <p><strong>308-746-0339</strong></p>
             <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
         `;
-
-        instrucciones.style.display = "block";
     }
 
-    if (metodo === "Venmo") {
-    instrucciones.innerHTML = `
-        <h4>Pago con Venmo</h4>
-        <p>Envía tu pago por Venmo al siguiente usuario:</p>
-        <p><strong>@Perla-GarciaCavazos</strong></p>
-        <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
-    `;
+    instrucciones.style.display = "block";
+}
+
+if (metodo === "Venmo") {
+    if (idiomaActual === "en") {
+        instrucciones.innerHTML = `
+            <h4>Pay with Venmo</h4>
+            <p>Send your payment through Venmo to the following username:</p>
+            <p><strong>@Perla-GarciaCavazos</strong></p>
+            <p>After making your payment, contact us to confirm your order.</p>
+        `;
+    } else {
+        instrucciones.innerHTML = `
+            <h4>Pago con Venmo</h4>
+            <p>Envía tu pago por Venmo al siguiente usuario:</p>
+            <p><strong>@Perla-GarciaCavazos</strong></p>
+            <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
+        `;
+    }
 
     instrucciones.style.display = "block";
 }
 
 if (metodo === "Cash App") {
-    instrucciones.innerHTML = `
-        <h4>Pago con Cash App</h4>
-        <p>Envía tu pago por Cash App al siguiente $Cashtag:</p>
-        <p><strong>$perlagc1</strong></p>
-        <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
-    `;
+    if (idiomaActual === "en") {
+        instrucciones.innerHTML = `
+            <h4>Pay with Cash App</h4>
+            <p>Send your payment through Cash App to the following $Cashtag:</p>
+            <p><strong>$perlagc1</strong></p>
+            <p>After making your payment, contact us to confirm your order.</p>
+        `;
+    } else {
+        instrucciones.innerHTML = `
+            <h4>Pago con Cash App</h4>
+            <p>Envía tu pago por Cash App al siguiente $Cashtag:</p>
+            <p><strong>$perlagc1</strong></p>
+            <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
+        `;
+    }
 
     instrucciones.style.display = "block";
 }
@@ -212,3 +240,136 @@ if (tipo === "email") {
         mensaje;
 }
 }
+
+
+/* ===== IDIOMAS DE JACKIE'S BOUTIQUE ===== */
+
+let idiomaActual = "es";
+
+function cambiarIdioma(idioma) {
+    idiomaActual = idioma;
+actualizarCarrito();
+
+    // Cambiar idioma del documento
+    document.documentElement.lang = idioma;
+
+    // Botones activos
+    document.getElementById("btn-es").classList.toggle(
+        "activo", idioma === "es"
+    );
+
+    document.getElementById("btn-en").classList.toggle(
+        "activo", idioma === "en"
+    );
+
+    // Navegación
+    const enlaces = document.querySelectorAll("nav a");
+
+    if (idioma === "en") {
+
+        document.querySelector("#inicio p").textContent =
+    "Discover our collection of genuine leather handbags, created for women who seek elegance, personality, and a unique style.";
+
+document.querySelector("#inicio a").textContent =
+    "View Collection";
+        enlaces[0].textContent = "Home";
+        enlaces[1].textContent = "Collection";
+        enlaces[2].textContent = "Our Story";
+        enlaces[3].textContent = "Contact Us";
+
+        // Carrito en inglés
+enlaces[4].childNodes[0].textContent = "🛒 Cart (";
+
+// Título del carrito en inglés
+document.querySelector("#carrito h2").textContent =
+    "🛒 Your Cart";
+
+    // Botón de compra en inglés
+document.getElementById("finalizar-compra").textContent =
+    "Proceed to Checkout";
+
+    document.querySelector("#checkout h3").textContent =
+    "Complete Your Purchase";
+
+    document.querySelector("#checkout p").firstChild.textContent =
+    "Order Total: ";
+
+    document.querySelector("#checkout p:nth-of-type(2)").textContent =
+    "Select your payment method:";
+
+    document.querySelector(".aviso-pedido").textContent =
+    "Important: Sending your order does not reserve the handbag. Your order will remain pending until we receive and confirm your payment.";
+// Botones para enviar el pedido en inglés
+document.querySelector('#confirmar-pedido button[onclick*="sms"]').textContent =
+    "📱 Send by Text";
+
+document.querySelector('#confirmar-pedido button[onclick*="email"]').textContent =
+    "✉️ Send by Email";
+
+        // Encabezado principal
+        document.querySelector("#inicio h1").textContent =
+            "100% Genuine Leather Handbags";
+
+            // Colección en inglés
+document.querySelector("#coleccion h2").textContent =
+    "Our Collection";
+
+document.querySelector(".coleccion-intro").textContent =
+    "Discover unique designs made from 100% genuine leather, carefully selected to highlight your style and personality.";
+
+    } else {
+        enlaces[0].textContent = "Inicio";
+        enlaces[1].textContent = "Colección";
+        enlaces[2].textContent = "Nuestra Historia";
+        enlaces[3].textContent = "Contáctanos";
+
+        // Carrito en español
+enlaces[4].childNodes[0].textContent = "🛒 Carrito (";
+
+// Título del carrito en español
+document.querySelector("#carrito h2").textContent =
+    "🛒 Tu Carrito";
+
+    // Botón de compra en español
+document.getElementById("finalizar-compra").textContent =
+    "Finalizar compra";
+
+    document.querySelector("#checkout h3").textContent =
+    "Finaliza tu compra";
+
+    document.querySelector("#checkout p").firstChild.textContent =
+    "Total de tu pedido: ";
+
+    document.querySelector("#checkout p:nth-of-type(2)").textContent =
+    "Selecciona tu método de pago:";
+
+    // Aviso importante en español
+document.querySelector(".aviso-pedido").textContent =
+    "Importante: enviar tu pedido no reserva la bolsa. Tu pedido quedará pendiente hasta que recibamos y confirmemos tu pago.";
+
+// Botones para enviar el pedido en español
+document.querySelector('#confirmar-pedido button[onclick*="sms"]').textContent =
+    "📱 Enviar por mensaje";
+
+document.querySelector('#confirmar-pedido button[onclick*="email"]').textContent =
+    "✉️ Enviar por correo";
+
+        document.querySelector("#inicio h1").textContent =
+            "Bolsas de Piel 100% Genuina";
+            // Colección en español
+document.querySelector("#coleccion h2").textContent =
+    "Nuestra Colección";
+
+document.querySelector(".coleccion-intro").textContent =
+    "Descubre diseños únicos elaborados en 100% piel, seleccionados especialmente para resaltar tu estilo y personalidad.";
+    }
+    // Actualizar las instrucciones de pago al cambiar idioma
+if (metodoPagoSeleccionado !== "") {
+    mostrarPago(metodoPagoSeleccionado);
+}
+}
+
+// Español seleccionado al cargar la página
+document.addEventListener("DOMContentLoaded", function() {
+    cambiarIdioma("es");
+});

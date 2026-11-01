@@ -655,3 +655,32 @@ article button:hover {
         padding: 30px 20px;
     }
 }
+
+/* ===== SELECTOR DE IDIOMA ===== */
+
+.selector-idioma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: #fff8fb;
+}
+
+.selector-idioma button {
+    background-color: white;
+    color: #a64d79;
+    border: 1px solid #d9a5be;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.selector-idioma button:hover,
+.selector-idioma button.activo {
+    background-color: #a64d79;
+    color: white;
+}

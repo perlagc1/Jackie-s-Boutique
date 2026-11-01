@@ -253,7 +253,403 @@ actualizarCarrito();
     // Cambiar idioma del documento
     document.documentElement.lang = idioma;
 
-    // Botones activos
+    // Traducción de la descripción de Arely
+const descripcionArely = document.querySelector(".descripcion-arely");
+
+if (descripcionArely) {
+    if (idioma === "en") {
+        descripcionArely.textContent =
+            "An elegant design crafted from 100% genuine leather, " +
+            "featuring handcrafted details that highlight its unique " +
+            "and sophisticated style.";
+    } else {
+        descripcionArely.textContent =
+            "Un diseño elegante elaborado en 100% piel, " +
+            "con detalles artesanales que resaltan su estilo " +
+            "único y sofisticado.";
+    }
+    }
+
+ // Traducción de Keli azul
+const descripcionKeliAzul = document.querySelector(".descripcion-keli-azul");
+
+if (descripcionKeliAzul) {
+    if (idioma === "en") {
+        descripcionKeliAzul.textContent =
+            "Compact, elegant, and made from 100% genuine leather. " +
+            "Perfect for carrying your essentials in style.";
+    } else {
+        descripcionKeliAzul.textContent =
+            "Compacta, elegante y elaborada en 100% piel. " +
+            "Perfecta para llevar lo esencial con estilo.";
+    }
+}
+
+// Traducción de Keli rosa
+const descripcionKeliRosa = document.querySelector(".descripcion-keli-rosa");
+
+if (descripcionKeliRosa) {
+    if (idioma === "en") {
+        descripcionKeliRosa.textContent =
+            "Small, feminine, and full of personality. " +
+            "Made from 100% genuine leather with a standout design.";
+    } else {
+        descripcionKeliRosa.textContent =
+            "Pequeña, femenina y llena de personalidad. " +
+            "Elaborada en 100% piel con un diseño que destaca.";
+    }
+    }
+
+    // Traducción de Perla
+const descripcionPerla = document.querySelector(".descripcion-perla");
+
+if (descripcionPerla) {
+    if (idioma === "en") {
+        descripcionPerla.textContent =
+            "A striking and elegant design made from 100% genuine leather. " +
+            "Its jade green color adds personality and distinction.";
+    } else {
+        descripcionPerla.textContent =
+            "Un diseño llamativo y elegante en 100% piel. " +
+            "Su tono verde jade aporta personalidad y distinción.";
+    }
+}
+
+// Traducción de Juli
+const descripcionJuli = document.querySelector(".descripcion-juli");
+
+if (descripcionJuli) {
+    if (idioma === "en") {
+        descripcionJuli.textContent =
+            "A charming piece made from 100% genuine leather, " +
+            "featuring golden details that highlight its feminine style.";
+    } else {
+        descripcionJuli.textContent =
+            "Una pieza encantadora elaborada en 100% piel, " +
+            "con detalles dorados que resaltan su estilo femenino.";
+    }
+}
+
+// Traducción de Dafne
+const descripcionDafne = document.querySelector(".descripcion-dafne");
+
+if (descripcionDafne) {
+    if (idioma === "en") {
+        descripcionDafne.textContent =
+            "An elegant design crafted from 100% genuine leather, " +
+            "featuring a beautiful cowhide detail that gives it " +
+            "a unique and sophisticated style.";
+    } else {
+        descripcionDafne.textContent =
+            "Un diseño elegante elaborado en 100% piel, " +
+            "con un hermoso detalle de pelo de res que le da " +
+            "un estilo único y sofisticado.";
+    }
+}
+
+// Traducción de Michel
+const descripcionMichel = document.querySelector(".descripcion-michel");
+
+if (descripcionMichel) {
+    if (idioma === "en") {
+        descripcionMichel.textContent =
+            "A 100% genuine leather handbag with a beautiful pink color " +
+            "and golden details that give it a special and elegant touch.";
+    } else {
+        descripcionMichel.textContent =
+            "Una cartera de 100% piel con un hermoso color " +
+            "rosa y detalles dorados que le dan un toque " +
+            "especial y elegante.";
+    }
+}
+
+// Traducción de Sofi
+const descripcionSofi = document.querySelector(".descripcion-sofi");
+
+if (descripcionSofi) {
+    if (idioma === "en") {
+        descripcionSofi.textContent =
+            "A classic and elegant design made from 100% genuine leather, " +
+            "with a versatile style perfect for any occasion.";
+    } else {
+        descripcionSofi.textContent =
+            "Un diseño clásico y elegante elaborado en 100% piel, " +
+            "con un estilo versátil ideal para cualquier ocasión.";
+    }
+}
+
+// Traducción de Grecia
+const descripcionGrecia = document.querySelector(".descripcion-grecia");
+
+if (descripcionGrecia) {
+    if (idioma === "en") {
+        descripcionGrecia.textContent =
+            "A handcrafted design made from 100% genuine leather, " +
+            "featuring elegant floral details that highlight " +
+            "its unique and sophisticated style.";
+    } else {
+        descripcionGrecia.textContent =
+            "Un diseño artesanal elaborado en 100% piel, " +
+            "con elegantes detalles florales que resaltan " +
+            "su estilo único y sofisticado.";
+    }
+}
+
+// Traducción de Cloe Turquesa
+const descripcionCloe = document.querySelector(".descripcion-cloe");
+
+if (descripcionCloe) {
+    if (idioma === "en") {
+        descripcionCloe.textContent =
+            "A handcrafted handbag made from 100% genuine leather, " +
+            "featuring a beautiful floral design and a turquoise " +
+            "color that highlights its unique style.";
+    } else {
+        descripcionCloe.textContent =
+            "Una cartera artesanal elaborada en 100% piel, " +
+            "con un hermoso diseño floral y un tono turquesa " +
+            "que resalta su estilo único.";
+    }
+}
+
+// Traducción de Cloe Chocolate
+const descripcionCloeChocolate = document.querySelector(".descripcion-cloe-chocolate");
+
+if (descripcionCloeChocolate) {
+    if (idioma === "en") {
+        descripcionCloeChocolate.textContent =
+            "A handcrafted handbag made from 100% genuine leather, " +
+            "featuring an elegant chocolate color and floral details " +
+            "that highlight its classic and sophisticated style.";
+    } else {
+        descripcionCloeChocolate.textContent =
+            "Una cartera artesanal elaborada en 100% piel, " +
+            "con un elegante tono chocolate y detalles florales " +
+            "que resaltan su estilo clásico y sofisticado.";
+    }
+}
+
+// Traducción de Cloe Gris
+const descripcionCloeGris = document.querySelector(".descripcion-cloe-gris");
+
+if (descripcionCloeGris) {
+    if (idioma === "en") {
+        descripcionCloeGris.textContent =
+            "A handcrafted handbag made from 100% genuine leather, " +
+            "featuring an elegant gray color and floral details " +
+            "that give it a modern and sophisticated style.";
+    } else {
+        descripcionCloeGris.textContent =
+            "Una cartera artesanal elaborada en 100% piel, " +
+            "con un elegante tono gris y detalles florales " +
+            "que le dan un estilo moderno y sofisticado.";
+    }
+}
+
+// Traducción de Keli Grande
+const descripcionKeliGrande = document.querySelector(".descripcion-keli-grande");
+
+if (descripcionKeliGrande) {
+    if (idioma === "en") {
+        descripcionKeliGrande.textContent =
+            "A spacious and elegant handbag made from 100% genuine leather, " +
+            "featuring a beautiful chocolate brown color and a " +
+            "classic, sophisticated design.";
+    } else {
+        descripcionKeliGrande.textContent =
+            "Una bolsa amplia y elegante elaborada en 100% piel, " +
+            "con un hermoso tono café chocolate y un diseño " +
+            "clásico y sofisticado.";
+    }
+}
+
+// Traducción de Jackie
+const descripcionJackie = document.querySelector(".descripcion-jackie");
+
+if (descripcionJackie) {
+    if (idioma === "en") {
+        descripcionJackie.textContent =
+            "A feminine and elegant handbag made from 100% genuine leather, " +
+            "featuring a beautiful pink color and details that give it " +
+            "a modern and sophisticated style.";
+    } else {
+        descripcionJackie.textContent =
+            "Una bolsa femenina y elegante elaborada en 100% piel, " +
+            "con un hermoso tono rosa y detalles que le dan " +
+            "un estilo moderno y sofisticado.";
+    }
+}
+
+// Traducción de Dania
+const descripcionDania = document.querySelector(".descripcion-dania");
+
+if (descripcionDania) {
+    if (idioma === "en") {
+        descripcionDania.textContent =
+            "An elegant handbag made from 100% genuine leather, " +
+            "featuring a beautiful floral design and brown-toned details " +
+            "that highlight its unique and sophisticated style.";
+    } else {
+        descripcionDania.textContent =
+            "Una bolsa elegante elaborada en 100% piel, " +
+            "con un hermoso diseño floral y detalles en tono café " +
+            "que resaltan su estilo único y sofisticado.";
+    }
+}
+
+// Traducción de Sobre
+const descripcionSobre = document.querySelector(".descripcion-sobre");
+
+if (descripcionSobre) {
+    if (idioma === "en") {
+        descripcionSobre.textContent =
+            "A handcrafted handbag made from 100% genuine leather, " +
+            "featuring embossed cowhide hair details and fringe " +
+            "that give it a unique and authentic style.";
+    } else {
+        descripcionSobre.textContent =
+            "Una bolsa artesanal elaborada en 100% piel, " +
+            "con detalle de pelo de res, grabado floral " +
+            "y flecos que le dan un estilo único y auténtico.";
+    }
+}
+
+// Traducción de Luna
+const descripcionLuna = document.querySelector(".descripcion-luna");
+
+if (descripcionLuna) {
+    if (idioma === "en") {
+        descripcionLuna.textContent =
+            "An elegant handbag made from 100% genuine leather, " +
+            "featuring beautiful embossed floral details and a warm " +
+            "brown color that give it an artisanal and sophisticated style.";
+    } else {
+        descripcionLuna.textContent =
+            "Una bolsa elegante elaborada en 100% piel, " +
+            "con un hermoso grabado floral y un cálido tono café " +
+            "que le dan un estilo artesanal y sofisticado.";
+    }
+}
+
+// Traducción de Diana Grande
+const descripcionDianaGrande = document.querySelector(".descripcion-diana-grande");
+
+if (descripcionDianaGrande) {
+    if (idioma === "en") {
+        descripcionDianaGrande.textContent =
+            "A spacious and elegant handbag made from 100% genuine leather, " +
+            "featuring beautiful embossed floral patterns and handcrafted " +
+            "details that highlight its classic and sophisticated style.";
+    } else {
+        descripcionDianaGrande.textContent =
+            "Una bolsa amplia y elegante elaborada en 100% piel, " +
+            "con un hermoso grabado floral y detalles artesanales " +
+            "que resaltan su estilo clásico y sofisticado.";
+    }
+}
+
+// Traducción de Isabel
+const descripcionIsabel = document.querySelector(".descripcion-isabel");
+
+if (descripcionIsabel) {
+    if (idioma === "en") {
+        descripcionIsabel.textContent =
+            "An elegant and versatile handbag made from 100% genuine leather, " +
+            "featuring a beautiful neutral color and handcrafted details " +
+            "that give it a classic and sophisticated style.";
+    } else {
+        descripcionIsabel.textContent =
+            "Una bolsa elegante y versátil elaborada en 100% piel, " +
+            "con un hermoso tono neutro y detalles artesanales " +
+            "que le dan un estilo clásico y sofisticado.";
+    }
+}
+
+
+// Traducción de Nuestra Historia
+const textosHistoria = {
+    en: {
+        titulo: "Our Story",
+        p1: "Welcome to Jackie's Boutique, a space created to celebrate the style, beauty, and essence of every woman.",
+        p2: "Our boutique was born from a love for 100% genuine leather handbags and designs that combine elegance, personality, and a touch of Mexican inspiration.",
+        p3: "Each piece is carefully selected for women who want to carry something special that reflects their personal style.",
+        lema: "Jackie's Boutique — Your style, your essence."
+    },
+    es: {
+        titulo: "Nuestra Historia",
+        p1: "Bienvenidas a Jackie's Boutique, un espacio creado para celebrar el estilo, la belleza y la esencia de cada mujer.",
+        p2: "Nuestra boutique nace del gusto por las bolsas de 100% piel y por los diseños que combinan elegancia, personalidad y un toque de inspiración mexicana.",
+        p3: "Cada pieza es elegida pensando en mujeres que quieren llevar consigo algo especial que refleje su propio estilo.",
+        lema: "Jackie's Boutique — Tu estilo, tu esencia."
+    }
+};
+
+const historia = textosHistoria[idioma];
+
+document.querySelector(".titulo-historia").textContent = historia.titulo;
+document.querySelector(".historia-1").textContent = historia.p1;
+document.querySelector(".historia-2").textContent = historia.p2;
+document.querySelector(".historia-3").textContent = historia.p3;
+document.querySelector(".historia-lema").textContent = historia.lema;
+
+// Traducción de Contáctanos
+const textosContacto = {
+    en: {
+        titulo: "Contact Us",
+        p1: "Interested in one of our handbags? We're here to help!",
+        p2: "Contact us to learn more about our collection, availability, and upcoming designs.",
+        telefono: "📱 Phone:",
+        correo: "📧 Email:",
+        final: "It will be our pleasure to assist you."
+    },
+    es: {
+        titulo: "Contáctanos",
+        p1: "¿Te interesa alguna de nuestras bolsas? Estamos aquí para ayudarte.",
+        p2: "Escríbenos para conocer nuestra colección, disponibilidad y próximos diseños.",
+        telefono: "📱 Teléfono:",
+        correo: "📧 Correo:",
+        final: "Será un placer atenderte."
+    }
+};
+
+const contacto = textosContacto[idioma];
+
+document.querySelector(".titulo-contacto").textContent = contacto.titulo;
+document.querySelector(".contacto-1").textContent = contacto.p1;
+document.querySelector(".contacto-2").textContent = contacto.p2;
+document.querySelector(".contacto-telefono").textContent = contacto.telefono;
+document.querySelector(".contacto-correo").textContent = contacto.correo;
+document.querySelector(".contacto-final").textContent = contacto.final;
+
+// Traducción del pie de página
+const textosFooter = {
+    en: {
+        derechos: "© 2026 Jackie's Boutique. All rights reserved.",
+        lema: "Your style, your essence."
+    },
+    es: {
+        derechos: "© 2026 Jackie's Boutique. Todos los derechos reservados.",
+        lema: "Tu estilo, tu esencia."
+    }
+};
+
+const footer = textosFooter[idioma];
+
+document.querySelector(".footer-derechos").textContent = footer.derechos;
+document.querySelector(".footer-lema").textContent = footer.lema;
+
+    // Traducir botones de los productos
+document.querySelectorAll(".productos article button").forEach(boton => {
+
+    if (boton.disabled || boton.classList.contains("agotado")) {
+        boton.textContent = idioma === "en" ? "SOLD OUT" : "AGOTADO";
+    } else {
+        boton.textContent = idioma === "en"
+            ? "Add to Cart 🛒"
+            : "Agregar al carrito 🛒";
+    }
+
+});
     document.getElementById("btn-es").classList.toggle(
         "activo", idioma === "es"
     );
@@ -372,4 +768,4 @@ if (metodoPagoSeleccionado !== "") {
 // Español seleccionado al cargar la página
 document.addEventListener("DOMContentLoaded", function() {
     cambiarIdioma("es");
-});
+})

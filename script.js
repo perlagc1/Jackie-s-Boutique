@@ -810,7 +810,8 @@ const fotosAdicionales = {
 
 "Arely Dorada": [
   "Arely Beige Embossed Leather Handbag Collage.png",
-  "Side-by-Side Arely Dorada Portrait.png"
+  "Side-by-Side Arely Dorada Portrait.png",
+  "Arely_tono_dorado.png"
 ],
   
 "Arely Azul Marino": [
@@ -824,11 +825,12 @@ const fotosAdicionales = {
   "Studio Diptych with Arely Oscuro Handbag.png",
   "Arely Black Leather Bag Collage.png"
 ],
-
-    "Cloe": [
-        "Cloe Teal Embossed Leather Bag Collage.png",
-        "Cloe Teal Embossed Handbag Style Showcase.png"
-    ],
+        
+"Cloe": [
+  "Cloe Teal Embossed Leather Bag Collage.png",
+  "Cloe Teal Embossed Handbag Style Showcase.png",
+  "Cloe Teal Embossed Floral Handbag.png"
+],
     "Cloe Chocolate": [
         "Cloe Chocolate Embossed Brown Purse.png",
         "Cloe Brown Leather Artisan Bag.png",

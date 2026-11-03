@@ -270,6 +270,35 @@ if (descripcionArely) {
     }
     }
 
+    
+  // Traducciones de las tres Arely nuevas
+  const traduccionesArely = {
+    "Arely Dorada": {
+      es: "Bolsa de piel 100% genuina con elegantes detalles artesanales en tono dorado.",
+      en: "A 100% genuine leather handbag with elegant handcrafted details in a golden tone."
+    },
+    "Arely Azul Marino": {
+      es: "Bolsa de piel 100% genuina en elegante tono azul marino, con detalles artesanales que resaltan su estilo.",
+      en: "A 100% genuine leather handbag in an elegant navy blue shade, featuring handcrafted details."
+    },
+    "Arely Oscura": {
+      es: "Bolsa de piel 100% genuina en tono oscuro, con detalles artesanales que le dan un estilo elegante y sofisticado.",
+      en: "A 100% genuine leather handbag in a dark shade, featuring handcrafted details for an elegant, sophisticated look."
+    }
+  };
+
+  document.querySelectorAll(".productos article").forEach(articulo => {
+    const nombre = articulo.querySelector("h3")?.textContent.trim();
+    const traduccion = traduccionesArely[nombre];
+
+    if (traduccion) {
+      const descripcion = articulo.querySelector("p");
+      if (descripcion) {
+        descripcion.textContent = traduccion[idioma];
+      }
+    }
+  });
+
  // Traducción de Keli azul
 const descripcionKeliAzul = document.querySelector(".descripcion-keli-azul");
 
@@ -776,6 +805,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* GALERÍAS — independientes del carrito y de los pagos */
 const fotosAdicionales = {
+
+  
+
+"Arely Dorada": [
+  "Arely Beige Embossed Leather Handbag Collage.png",
+  "Side-by-Side Arely Dorada Portrait.png"
+],
+  
+"Arely Azul Marino": [
+  "Arely Azul Marino Leather Handbag Showcase.png",
+  "Arely Azul Marino (2).png",
+  "Arely Azul Marino.png"
+  ],
+  
+"Arely Oscura": [
+  "Arely en oscuro.png",
+  "Studio Diptych with Arely Oscuro Handbag.png",
+  "Arely Black Leather Bag Collage.png"
+],
+
     "Cloe": [
         "Cloe Teal Embossed Leather Bag Collage.png",
         "Cloe Teal Embossed Handbag Style Showcase.png"
@@ -878,3 +927,9 @@ function abrirGaleria(boton) {
     actualizarFoto();
     cerrar.focus();
 }
+
+document.querySelectorAll(".ver-mas-fotos").forEach(boton => {
+  boton.addEventListener("click", function () {
+    abrirGaleria(this);
+  });
+});

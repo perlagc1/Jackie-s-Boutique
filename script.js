@@ -639,7 +639,7 @@ document.querySelector(".footer-derechos").textContent = footer.derechos;
 document.querySelector(".footer-lema").textContent = footer.lema;
 
     // Traducir botones de los productos
-document.querySelectorAll(".productos article button").forEach(boton => {
+document.querySelectorAll(".productos article button:not(.ver-mas-fotos)").forEach(boton => {
 
     if (boton.disabled || boton.classList.contains("agotado")) {
         boton.textContent = idioma === "en" ? "SOLD OUT" : "AGOTADO";
@@ -759,6 +759,10 @@ document.querySelector("#coleccion h2").textContent =
 document.querySelector(".coleccion-intro").textContent =
     "Descubre diseños únicos elaborados en 100% piel, seleccionados especialmente para resaltar tu estilo y personalidad.";
     }
+    document.querySelectorAll(".ver-mas-fotos").forEach(boton => {
+        boton.textContent = idioma === "en" ? "View More Photos" : "Ver más fotos";
+    });
+
     // Actualizar las instrucciones de pago al cambiar idioma
 if (metodoPagoSeleccionado !== "") {
     mostrarPago(metodoPagoSeleccionado);
@@ -769,3 +773,108 @@ if (metodoPagoSeleccionado !== "") {
 document.addEventListener("DOMContentLoaded", function() {
     cambiarIdioma("es");
 })
+
+/* GALERÍAS — independientes del carrito y de los pagos */
+const fotosAdicionales = {
+    "Cloe": [
+        "Cloe Teal Embossed Leather Bag Collage.png",
+        "Cloe Teal Embossed Handbag Style Showcase.png"
+    ],
+    "Cloe Chocolate": [
+        "Cloe Chocolate Embossed Brown Purse.png",
+        "Cloe Brown Leather Artisan Bag.png",
+        "Side-by-Side Cloe Chocolate Portrait.png"
+    ],
+    "Cloe Gris": [
+        "Cloe Gray Embossed Leather Bag Collage.png",
+        "Cloe Gris  Floral Clutch.png",
+        "Side-by-Side Cloe Gris Portraits.png"
+    ],
+    "Michel": [
+        "Michel Pink Embossed Leather Handbag.png",
+        "Michel rosa con toques dorados.png",
+        "Studio Portrait With Michel Handbag.png"
+    ],
+    "Jackie": [
+        "Jacqui Fuchsia Handbag Showcase.png",
+        "Jacqui Fuchsia Handbag Style Diptych.png",
+        "Jacqui en Fushia (1).png"
+    ]
+};
+
+let galeriaAnteriormenteEnfocado = null;
+
+function abrirGaleria(boton) {
+    const articulo = boton.closest("article");
+    const nombre = boton.dataset.galeria;
+    const principal = articulo.querySelector("img").getAttribute("src");
+    const fotos = [principal, ...(fotosAdicionales[nombre] || []).map(archivo => "images/" + archivo)];
+    if (!fotos.length) return;
+    galeriaAnteriormenteEnfocado = boton;
+    let indice = 0;
+
+    const fondo = document.createElement("div");
+    fondo.className = "galeria-fondo";
+    fondo.setAttribute("role", "presentation");
+    const panel = document.createElement("div");
+    panel.className = "galeria-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-modal", "true");
+    panel.setAttribute("aria-label", nombre);
+    const titulo = document.createElement("h2");
+    titulo.textContent = nombre;
+    const cerrar = document.createElement("button");
+    cerrar.className = "galeria-cerrar";
+    cerrar.type = "button";
+    cerrar.setAttribute("aria-label", idiomaActual === "en" ? "Close gallery" : "Cerrar galería");
+    cerrar.textContent = "✕";
+    const imagen = document.createElement("img");
+    imagen.className = "galeria-imagen";
+    const controles = document.createElement("div");
+    controles.className = "galeria-controles";
+    const anterior = document.createElement("button");
+    anterior.type = "button";
+    anterior.textContent = "❮";
+    anterior.setAttribute("aria-label", idiomaActual === "en" ? "Previous photo" : "Foto anterior");
+    const contador = document.createElement("span");
+    contador.setAttribute("aria-live", "polite");
+    const siguiente = document.createElement("button");
+    siguiente.type = "button";
+    siguiente.textContent = "❯";
+    siguiente.setAttribute("aria-label", idiomaActual === "en" ? "Next photo" : "Siguiente foto");
+
+    function actualizarFoto() {
+        imagen.src = fotos[indice];
+        imagen.alt = nombre + " — " + (indice + 1) + "/" + fotos.length;
+        contador.textContent = (indice + 1) + " / " + fotos.length;
+    }
+    function cerrarGaleria() {
+        document.removeEventListener("keydown", manejarTeclas);
+        fondo.remove();
+        document.body.style.overflow = "";
+        galeriaAnteriormenteEnfocado?.focus();
+    }
+    function manejarTeclas(evento) {
+        if (evento.key === "Escape") cerrarGaleria();
+        if (evento.key === "ArrowLeft") { indice = (indice - 1 + fotos.length) % fotos.length; actualizarFoto(); }
+        if (evento.key === "ArrowRight") { indice = (indice + 1) % fotos.length; actualizarFoto(); }
+        if (evento.key === "Tab") {
+            const botones = [cerrar, anterior, siguiente];
+            const actual = botones.indexOf(document.activeElement);
+            if (evento.shiftKey && actual <= 0) { evento.preventDefault(); siguiente.focus(); }
+            else if (!evento.shiftKey && actual === 2) { evento.preventDefault(); cerrar.focus(); }
+        }
+    }
+    anterior.onclick = () => { indice = (indice - 1 + fotos.length) % fotos.length; actualizarFoto(); };
+    siguiente.onclick = () => { indice = (indice + 1) % fotos.length; actualizarFoto(); };
+    cerrar.onclick = cerrarGaleria;
+    fondo.onclick = evento => { if (evento.target === fondo) cerrarGaleria(); };
+    controles.append(anterior, contador, siguiente);
+    panel.append(cerrar, titulo, imagen, controles);
+    fondo.append(panel);
+    document.body.append(fondo);
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", manejarTeclas);
+    actualizarFoto();
+    cerrar.focus();
+}

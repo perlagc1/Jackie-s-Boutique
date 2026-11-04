@@ -846,11 +846,41 @@ const fotosAdicionales = {
         "Michel rosa con toques dorados.png",
         "Studio Portrait With Michel Handbag.png"
     ],
+    "Keli Rosa": [
+  "Keli rosa.png",
+  "Keli rosa2.png",
+  "Keli Rosa Leather Handbag Collage.png"
+],
+    "Keli Azul": [
+  "Keli azul.png",
+  "Keli azul2.png",
+  "Keli Azul Leather Handbag Showcase.png"
+],
     "Jackie": [
         "Jacqui Fuchsia Handbag Showcase.png",
         "Jacqui Fuchsia Handbag Style Diptych.png",
         "Jacqui en Fushia (1).png"
-    ]
+    ],
+    "Dafne": [
+  "Dafne.png",
+  "Dafne2.png",
+  "Dafne Collage.png"
+],
+"Grecia": [
+  "Grecia2.png",
+  "Grecia4.png"
+],
+"Juli": [
+  "Juli.png",
+  "Juli2.png",
+  "Juli3.png"
+],
+
+"Perla": [
+  "Perla.png",
+  "Perla2.png",
+  "Perla Collage.png"
+],
 };
 
 let galeriaAnteriormenteEnfocado = null;

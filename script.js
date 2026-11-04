@@ -808,6 +808,37 @@ const fotosAdicionales = {
 
   
 
+    
+"Diana": [
+  "Diana Collage.png",
+  "Diana Portrait.png",
+  "Diana side to side.png",
+],
+
+"Isabel": [
+  "Isabel Collage.png",
+  "Isabel Portrait.png",
+  "Isabel side to side.png",
+],
+
+"Luna": [
+  "Luna Collage.png",
+  "Luna Portrait.png",
+  "Luna side to side.png",
+],
+
+"Keli Grande": [
+  "Keli Grande Collage.png",
+  "Keli Grande Portrate.png",
+  "Keli Grande 2.png"
+],
+
+"Sobre": [
+  "Sobre Collage.png",
+  "Sobre Portrait.png",
+  "Sobre 1.png",
+],
+
 "Arely Dorada": [
   "Arely Beige Embossed Leather Handbag Collage.png",
   "Side-by-Side Arely Dorada Portrait.png",
@@ -868,7 +899,8 @@ const fotosAdicionales = {
 ],
 "Grecia": [
   "Grecia2.png",
-  "Grecia4.png"
+  "Grecia4.png",
+  "Grecia Collage.png"
 ],
 "Juli": [
   "Juli.png",
@@ -880,6 +912,12 @@ const fotosAdicionales = {
   "Perla.png",
   "Perla2.png",
   "Perla Collage.png"
+],
+
+"Dania": [
+  "Dania portrait.png",
+  "Dania_ Collage.png",
+  "Dania1.png"
 ],
 };
 

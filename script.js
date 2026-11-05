@@ -594,6 +594,158 @@ if (descripcionIsabel) {
     }
 }
 
+// Traducción de Bolsa Vaqueta
+const descripcionBolsaVaqueta = document.querySelector(
+  ".descripcion-bolsa-vaqueta"
+);
+
+if (descripcionBolsaVaqueta) {
+  if (idioma === "en") {
+    descripcionBolsaVaqueta.textContent =
+      "Genuine leather handbag in a beautiful pink shade, " +
+      "featuring gold-tone details and an elegant design.";
+  } else {
+    descripcionBolsaVaqueta.textContent =
+      "Bolsa de piel genuina en tono rosa, " +
+      "con detalles dorados y diseño elegante.";
+  }
+}
+
+// Traducción de Briana Oscura
+const descripcionBrianaOscura = document.querySelector(
+  ".descripcion-briana-oscura"
+);
+
+if (descripcionBrianaOscura) {
+  if (idioma === "en") {
+    descripcionBrianaOscura.textContent =
+      "Genuine leather handbag in a dark shade, " +
+      "featuring an elegant design and handcrafted details.";
+  } else {
+    descripcionBrianaOscura.textContent =
+      "Bolsa de piel genuina en tono oscuro, " +
+      "con un diseño elegante y detalles artesanales.";
+  }
+}
+
+// Traducción de Fernanda Oscura
+const descripcionFernandaOscura = document.querySelector(
+  ".descripcion-fernanda-oscura"
+);
+
+if (descripcionFernandaOscura) {
+  if (idioma === "en") {
+    descripcionFernandaOscura.textContent =
+      "Genuine leather handbag in black, " +
+      "featuring floral embossed patterns and elegant details.";
+  } else {
+    descripcionFernandaOscura.textContent =
+      "Bolsa de piel genuina en tono negro, " +
+      "con grabados florales y detalles elegantes.";
+  }
+}
+
+// Traducción de Lucia
+const descripcionLucia = document.querySelector(
+  ".descripcion-lucia"
+);
+
+if (descripcionLucia) {
+  if (idioma === "en") {
+    descripcionLucia.textContent =
+      "Genuine leather handbag with an elegant " +
+      "and versatile design, perfect for any occasion.";
+  } else {
+    descripcionLucia.textContent =
+      "Bolsa de piel genuina con un diseño elegante " +
+      "y versátil para cualquier ocasión.";
+  }
+}
+
+// Traducción de Paloma Azul Mezclilla
+const descripcionPalomaAzulMezclilla = document.querySelector(
+  ".descripcion-paloma-azul-mezclilla"
+);
+
+if (descripcionPalomaAzulMezclilla) {
+  if (idioma === "en") {
+    descripcionPalomaAzulMezclilla.textContent =
+      "Genuine leather handbag in a denim-blue shade, " +
+      "featuring an elegant and versatile design.";
+  } else {
+    descripcionPalomaAzulMezclilla.textContent =
+      "Bolsa de piel genuina en tono azul mezclilla, " +
+      "con un diseño elegante y versátil.";
+  }
+}
+
+// Traducción de Rocio Azul con Dorado
+const descripcionRocioAzulDorado = document.querySelector(
+  ".descripcion-rocio-azul-dorado"
+);
+
+if (descripcionRocioAzulDorado) {
+  if (idioma === "en") {
+    descripcionRocioAzulDorado.textContent =
+      "Genuine leather handbag in blue with gold-tone " +
+      "details and an elegant design.";
+  } else {
+    descripcionRocioAzulDorado.textContent =
+      "Bolsa de piel genuina en tono azul con " +
+      "detalles dorados y un diseño elegante.";
+  }
+}
+
+// Traducción de Rocio Oscuro
+const descripcionRocioOscuro = document.querySelector(
+  ".descripcion-rocio-oscuro"
+);
+
+if (descripcionRocioOscuro) {
+  if (idioma === "en") {
+    descripcionRocioOscuro.textContent =
+      "Genuine leather handbag in a dark shade, " +
+      "featuring an elegant and versatile design.";
+  } else {
+    descripcionRocioOscuro.textContent =
+      "Bolsa de piel genuina en tono oscuro, " +
+      "con un diseño elegante y versátil.";
+  }
+}
+
+// Traducción de Sobre 2
+const descripcionSobre2 = document.querySelector(
+  ".descripcion-sobre-2"
+);
+
+if (descripcionSobre2) {
+  if (idioma === "en") {
+    descripcionSobre2.textContent =
+      "Genuine leather handbag with an elegant, " +
+      "practical, and versatile design for any occasion.";
+  } else {
+    descripcionSobre2.textContent =
+      "Bolsa de piel genuina con un diseño elegante, " +
+      "práctico y versátil para cualquier ocasión.";
+  }
+}
+
+// Traducción de Valeria
+const descripcionValeria = document.querySelector(
+  ".descripcion-valeria"
+);
+
+if (descripcionValeria) {
+  if (idioma === "en") {
+    descripcionValeria.textContent =
+      "Genuine leather handbag with an elegant " +
+      "and versatile design, ideal for any occasion.";
+  } else {
+    descripcionValeria.textContent =
+      "Bolsa de piel genuina con un diseño elegante " +
+      "y versátil, ideal para cualquier ocasión.";
+  }
+}
 
 // Traducción de Nuestra Historia
 const textosHistoria = {

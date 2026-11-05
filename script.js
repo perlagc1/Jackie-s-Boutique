@@ -919,6 +919,59 @@ const fotosAdicionales = {
   "Dania_ Collage.png",
   "Dania1.png"
 ],
+
+"Bolsa Vaqueta": [
+  "Bolsa Vaqueta Portrait.png"
+],
+
+"Briana Oscura": [
+  "Briana Oscura Collage.png",
+  "Briana Oscura Portrait.png",
+  "Briana Oscura side to side.png"
+],
+
+"Fernanda Oscura": [
+  "Fernanda Oscura Collage.png",
+  "Fernanda Oscura Portrait.png",
+  "Fernanda Oscura side to side.png"
+],
+
+"Lucia": [
+  "Lucia Collage.png",
+  "Lucia portrait.png",
+  "Lucia side to side.png"
+],
+
+"Paloma Azul Mezclilla": [
+  "Paloma Azul Mezclilla Collage.png",
+  "Paloma azul mezclilla portrait.png",
+  "Paloma azul mezclilla side to side.png"
+],
+
+"Rocio Azul con Dorado": [
+  "Rocio azul con dorado Collage.png",
+  "Rocio azul con dorado Portrait.png",
+  "Rocio azul con dorado side to side.png"
+],
+
+"Rocio Oscuro": [
+  "Rocio Oscuro Collage.png",
+  "Rocio Oscuro Portrait.png",
+  "Rocio oscuro side to side.png"
+],
+
+"Sobre 2": [
+  "Sobre 2 Collage.png",
+  "Sobre 2 Portrait.png",
+  "Sobre 2 side to side.png"
+],
+
+"Valeria": [
+  "Valeria Collage.png",
+  "Valeria Portrait.png",
+  "Valeria side to side.png"
+],
+
 };
 
 let galeriaAnteriormenteEnfocado = null;

@@ -949,8 +949,8 @@ const fotosAdicionales = {
 ],
 
 "Rocio Azul con Dorado": [
-  "Rocio azul con dorado Collage.png",
-  "Rocio azul con dorado Portrait.png",
+  "Rocío azul con dorado Collage.png",
+  "Rocio azul con dorado portrait.png",
   "Rocio azul con dorado side to side.png"
 ],
 

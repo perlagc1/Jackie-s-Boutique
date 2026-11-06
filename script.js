@@ -54,8 +54,8 @@ function actualizarCarrito() {
     item.textContent = producto.nombre + " — $" + producto.precio + " ";
 
     const botonQuitar = document.createElement("button");
-    botonQuitar.textContent = idiomaActual === "en" ? "Remove" : "Quitar";
-
+    
+botonQuitar.textContent = idiomaActual === "en" ? "Remove" : "Quitar";
     botonQuitar.onclick = function() {
         quitarDelCarrito(producto.nombre);
     };
@@ -66,8 +66,75 @@ function actualizarCarrito() {
     total += producto.precio;
 });
 
-    totalCarrito.textContent = total;
+    
+const envio = calcularEnvio();
+
+if (envio === null) {
+  
+totalCarrito.textContent = total +
+  (idiomaActual === "en"
+    ? " + shipping pending"
+    : " + envío pendiente");
+} else {
+  totalCarrito.textContent = (total + envio).toFixed(2);
 }
+
+}
+
+function calcularEnvio() {
+  const zip = document.getElementById("zip-code").value.trim();
+  const costoEnvio = document.getElementById("costo-envio");
+const ingles = idiomaActual === "en";
+
+  if (!/^\d{5}$/.test(zip)) {
+    costoEnvio.textContent = ingles
+  ? "Please enter a valid 5-digit ZIP Code."
+  : "Ingresa un ZIP Code válido de 5 dígitos.";
+    return null;
+  }
+
+  if (zip === "68850") {
+   
+costoEnvio.textContent = ingles
+  ? "FREE local delivery"
+  : "Entrega local GRATIS";
+    return 0;
+  }
+
+  
+costoEnvio.textContent = ingles
+  ? "USPS Shipping: $10.00"
+  : "Envío USPS: $10.00";
+  return 10;
+}
+
+
+document.getElementById("zip-code").addEventListener("input", function () {
+  actualizarCarrito();
+
+  const checkout = document.getElementById("checkout");
+
+  if (checkout.style.display === "block") {
+    const envio = calcularEnvio();
+    const checkoutTotal = document.getElementById("checkout-total");
+
+    if (envio === null) {
+      checkoutTotal.textContent =
+        idiomaActual === "en"
+          ? "Shipping pending"
+          : "Envío pendiente";
+    } else {
+      let total = 0;
+
+      carrito.forEach(producto => {
+        total += producto.precio;
+      });
+
+      checkoutTotal.textContent = "$" + (total + envio).toFixed(2);
+    }
+  }
+});
+
 
 function quitarDelCarrito(nombre) {
     carrito = carrito.filter(
@@ -104,19 +171,35 @@ function finalizarCompra() {
         return;
     }
 
+const envio = calcularEnvio();
+
+if (envio === null) {
+  
+mostrarNotificacion(
+  idiomaActual === "en"
+    ? "⚠ Please enter a valid ZIP Code before continuing."
+    : "⚠ Ingresa un ZIP Code válido antes de continuar."
+);
+  document.getElementById("zip-code").focus();
+  return;
+}
+
     const checkout = document.getElementById("checkout");
     const checkoutTotal = document.getElementById("checkout-total");
-
     let total = 0;
 
     carrito.forEach(producto => {
         total += producto.precio;
     });
 
-    checkoutTotal.textContent = total;
+    checkoutTotal.textContent = "$" + (total + envio).toFixed(2);
     checkout.style.display = "block";
 
-    mostrarNotificacion("✓ Tu pedido está listo para continuar.");
+mostrarNotificacion(
+  idiomaActual === "en"
+    ? "✓ Your order is ready to continue."
+    : "✓ Tu pedido está listo para continuar."
+);
 }
 
 function mostrarPago(metodo) {
@@ -192,13 +275,22 @@ if (metodo === "Cash App") {
 const botonConfirmar = document.getElementById("confirmar-pedido");
 botonConfirmar.style.display = "inline-block";
 
-    mostrarNotificacion("✓ Seleccionaste " + metodo + " como método de pago.");
+    
+mostrarNotificacion(
+  idiomaActual === "en"
+    ? "✓ You selected " + metodo + " as your payment method."
+    : "✓ Seleccionaste " + metodo + " como método de pago."
+);
 }
 
 function confirmarPedido(tipo) {
 
     if (carrito.length === 0) {
-        mostrarNotificacion("⚠ Tu carrito está vacío.");
+        mostrarNotificacion(
+            idiomaActual === "en"
+                ? "⚠ Your cart is empty."
+                : "⚠ Tu carrito está vacío."
+        );
         return;
     }
     const productoAgotado = carrito.find(producto =>
@@ -216,17 +308,37 @@ carrito.forEach(producto => {
     total += producto.precio;
 });
 
+const envio = calcularEnvio();
+
+if (envio === null) {
+  mostrarNotificacion("⚠ Ingresa un ZIP Code válido.");
+  return;
+}
+
+const zip = document.getElementById("zip-code").value.trim();
+const totalFinal = total + envio;
+
 let resumenProductos = "";
 
 carrito.forEach(producto => {
     resumenProductos += producto.nombre + " — $" + producto.precio + "\n";
 });
 
+
+
 const resumenPedido =
-    "Pedido de Jackie's Boutique\n\n" +
-    resumenProductos +
-    "\nTotal: $" + total +
-    "\nMétodo de pago: " + metodoPagoSeleccionado;
+  (idiomaActual === "en"
+    ? "Jackie's Boutique Order\n\n"
+    : "Pedido de Jackie's Boutique\n\n") +
+  resumenProductos +
+  "\nZIP Code: " + zip +
+  (idiomaActual === "en"
+    ? "\nUSPS Shipping: $"
+    : "\nEnvío USPS: $") + envio.toFixed(2) +
+  "\nTotal: $" + totalFinal.toFixed(2) +
+  (idiomaActual === "en"
+    ? "\nPayment method: "
+    : "\nMétodo de pago: ") + metodoPagoSeleccionado;
 
     const mensaje = encodeURIComponent(resumenPedido);
 
@@ -235,7 +347,12 @@ if (tipo === "sms") {
 }
 
 if (tipo === "email") {
-    const asunto = encodeURIComponent("Pedido de Jackie's Boutique");
+    
+const asunto = encodeURIComponent(
+  idiomaActual === "en"
+    ? "Jackie's Boutique Order"
+    : "Pedido de Jackie's Boutique"
+);
 
     window.location.href =
         "mailto:angel_perla@hotmail.com?subject=" +
@@ -868,7 +985,21 @@ document.querySelector("#carrito h2").textContent =
     // Botón de compra en inglés
 document.getElementById("finalizar-compra").textContent =
     "Proceed to Checkout";
+   
+document.querySelector('label[for="zip-code"]').textContent =
+  "ZIP Code:";
 
+const zipActual = document.getElementById("zip-code").value.trim();
+const costoEnvioTexto = document.getElementById("costo-envio");
+
+if (!/^\d{5}$/.test(zipActual)) {
+  costoEnvioTexto.textContent =
+    "Please enter a valid 5-digit ZIP Code.";
+} else if (zipActual === "68850") {
+  costoEnvioTexto.textContent = "FREE local delivery";
+} else {
+  costoEnvioTexto.textContent = "USPS Shipping: $10.00";
+}
     document.querySelector("#checkout h3").textContent =
     "Complete Your Purchase";
 
@@ -1077,7 +1208,9 @@ const fotosAdicionales = {
 ],
 
 "Bolsa Vaqueta": [
-  "Bolsa Vaqueta Portrait.png"
+  "Bolsa Vaqueta Portrait.png",
+    "Bolsa Vaqueta Collage.png",
+    "Bolsa Vaqueta side to side.png"
 ],
 
 "Briana Oscura": [
@@ -1127,6 +1260,18 @@ const fotosAdicionales = {
   "Valeria Portrait.png",
   "Valeria side to side.png"
 ],
+
+"Carteron Dafne Chocolate": [
+  "Carteron Dafne Chocolate Collage.png",
+  "Carteron Dafne Chocolate Portrait.png",
+  "Carteron Dafne Chocolate side to side.png"
+],
+
+"Carteron Dafne Gris Oscuro": [
+  "Carteron Dafne Gris Oscuro Collage.png",
+  "Carteron Dafne Gris Oscuro Portrait.png",
+  "Carteron Dafne Gris Oscuro side to side.png"
+]
 
 };
 

@@ -69,6 +69,19 @@
     <div id="lista-carrito">
         <p>Tu carrito está vacío.</p>
     </div>
+   
+<!-- CÓDIGO POSTAL Y ENVÍO -->
+<div id="seccion-envio">
+  <label for="zip-code">ZIP Code / Código postal:</label>
+  <input type="text" id="zip-code"
+         maxlength="5"
+         inputmode="numeric"
+         placeholder="Ej. 68850">
+
+  <p id="costo-envio">
+    Ingresa tu ZIP Code para calcular el envío.
+  </p>
+</div>
 
     <p>
         <strong>Total: $<span id="total-carrito">0</span></strong>
@@ -82,7 +95,7 @@
 
     <p>
         Total de tu pedido:
-        <strong>$<span id="checkout-total">0</span></strong>
+        <strong><span id="checkout-total">$0.00</span></strong>
     </p>
 
     <p>Selecciona tu método de pago:</p>
@@ -145,7 +158,7 @@
 
             <div class="productos">
 
-               <article>
+               <article style="display: none;">
     <img src="images/Arely.png"
          alt="Bolsa Arely de piel">
 
@@ -165,7 +178,7 @@
 </article>
 
 
-<article>
+<article style="display: none;">
   <img src="images/Arely Dorada.png"
      alt="Bolsa Arely Dorada de piel">
 
@@ -376,7 +389,7 @@
                     <button type="button" class="ver-mas-fotos" data-galeria="Michel" onclick="abrirGaleria(this)">Ver más fotos</button>
 </article>
 
-                <article>
+                <article style="display: none;">
     <img src="images/Sofi.png"
          alt="Bolsa Sofi de piel">
 
@@ -604,7 +617,7 @@
     <button type="button" class="ver-mas-fotos" data-galeria="Diana" onclick="abrirGaleria(this)">Ver más fotos</button>
 </article>
 
-<article>
+<article style="display: none;">
     <img src="images/Isabel.png"
          alt="Bolsa Isabel de piel">
 
@@ -645,6 +658,57 @@
   <button type="button"
           class="ver-mas-fotos"
           data-galeria="Bolsa Vaqueta">
+    Ver más fotos
+  </button>
+</article>
+
+<article>
+  <img src="images/Carteron Dafne Chocolate.png"
+     alt="Carteron Dafne Chocolate de piel genuina">
+
+  <h3>Carteron Dafne Chocolate</h3>
+
+  <p class="descripcion-dafne-chocolate">
+    Carteron de piel genuina en tono chocolate,
+    con grabado floral, herrajes dorados y
+    múltiples compartimentos.
+  </p>
+
+  <p><strong>$55</strong></p>
+
+  <button onclick="agregarAlCarrito('Carteron Dafne Chocolate', 55)">
+    Agregar al carrito 🛒
+  </button>
+
+  <button type="button"
+          class="ver-mas-fotos"
+          data-galeria="Carteron Dafne Chocolate"
+    Ver más fotos
+  </button>
+</article>
+
+
+<article>
+    <img src="images/Carteron Dafne Gris Oscuro.png"
+     alt="Carterón Dafne Gris Oscuro de piel genuina">
+
+  <h3>Carterón Dafne Gris Oscuro</h3>
+
+  <p class="descripcion-dafne-gris-oscuro">
+    Carterón de piel genuina en gris oscuro,
+    con grabado floral, herrajes dorados y
+    múltiples compartimentos.
+  </p>
+
+  <p><strong>$55</strong></p>
+
+  <button onclick="agregarAlCarrito('Carterón Dafne Gris Oscuro', 55)">
+    Agregar al carrito 🛒
+  </button>
+
+  <button type="button"
+          class="ver-mas-fotos"
+          data-galeria="Carteron Dafne Gris Oscuro"
     Ver más fotos
   </button>
 </article>

@@ -151,6 +151,7 @@ if (metodo === "Venmo") {
             <h4>Pay with Venmo</h4>
             <p>Send your payment through Venmo to the following username:</p>
             <p><strong>@Perla-GarciaCavazos</strong></p>
+            <p><a href="https://venmo.com/u/Perla-GarciaCavazos" target="_blank" rel="noopener noreferrer">Open Perla's Venmo profile</a></p>
             <p>After making your payment, contact us to confirm your order.</p>
         `;
     } else {
@@ -158,6 +159,7 @@ if (metodo === "Venmo") {
             <h4>Pago con Venmo</h4>
             <p>Envía tu pago por Venmo al siguiente usuario:</p>
             <p><strong>@Perla-GarciaCavazos</strong></p>
+            <p><a href="https://venmo.com/u/Perla-GarciaCavazos" target="_blank" rel="noopener noreferrer">Abrir el perfil de Venmo de Perla</a></p>
             <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
         `;
     }
@@ -171,6 +173,7 @@ if (metodo === "Cash App") {
             <h4>Pay with Cash App</h4>
             <p>Send your payment through Cash App to the following $Cashtag:</p>
             <p><strong>$perlagc1</strong></p>
+            <p><a href="https://cash.app/$perlagc1" target="_blank" rel="noopener noreferrer">Open Perla's Cash App profile</a></p>
             <p>After making your payment, contact us to confirm your order.</p>
         `;
     } else {
@@ -178,6 +181,7 @@ if (metodo === "Cash App") {
             <h4>Pago con Cash App</h4>
             <p>Envía tu pago por Cash App al siguiente $Cashtag:</p>
             <p><strong>$perlagc1</strong></p>
+            <p><a href="https://cash.app/$perlagc1" target="_blank" rel="noopener noreferrer">Abrir el perfil de Cash App de Perla</a></p>
             <p>Después de realizar el pago, contáctanos para confirmar tu pedido.</p>
         `;
     }
